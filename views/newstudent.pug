@@ -1,0 +1,21 @@
+html
+    head
+        style
+            include newcourse.css
+    body
+        h1(id="top") Welcome to Registration Portal
+        div(id="line")
+            p Hello, #{name}
+        div(id="inp")
+            form(action='/newstudent', method="POST")
+                label(for="fname") Student ID
+                br
+                input(type="text" id="fname" name="stid" placeholder="Eg. 17BEE1002")
+                br
+                br
+                label(for="lname") Student Name
+                br
+                input(type="text" id="lname" name="stname")
+                br
+                br
+                input(type="submit" id="logbtn" value="Add Student")
