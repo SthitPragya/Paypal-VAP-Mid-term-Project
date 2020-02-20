@@ -210,18 +210,47 @@ app.listen(3000);                              port address
 
 FUNCTIONS IMPLEMENTED:
 
-function addcoursestudent(studentid, courseid, facultyid)    for adding a course in database
-function removecoursestudent(courseid, studentid)            for removing a course from database
-function addcourseteacher(courseid, teacherid)               for adding a course in database
-function removecourseteacher(teacherid, courseid)            for removing a course by from database
-function addstudent(studentid, studentname)                  for adding student account in database
-function removestudent(studentid)                            for removing student account from database
-function addteacher(teacherid, teachername)                  for adding teacher account in database
-function removeteacher(teacherid)                            for removing teacher account from database
-function addcourse(courseid, coursename)                     for adding course in course list
-function deletecourse(courseid)                              for removing a course from courselist
+function addcoursestudent(studentid, courseid, facultyid)           for adding a course in database
 
+function removecoursestudent(courseid, studentid)                   for removing a course from database
+
+function addcourseteacher(courseid, teacherid)                      for adding a course in database
+
+function removecourseteacher(teacherid, courseid)                   for removing a course by from database
+
+function addstudent(studentid, studentname)                         for adding student account in database
+
+
+function removestudent(studentid)                                   for removing student account from database
+
+function addteacher(teacherid, teachername)                         for adding teacher account in database
+
+function removeteacher(teacherid)                                   for removing teacher account from database
+
+function addcourse(courseid, coursename)                            for adding course in course list
+
+function deletecourse(courseid)                                     for removing a course from courselist
+
+
+
+STORAGE:
+
+Database is created using json files.
+
+
+FOR AUTHENTICATION:
+
+studentlogin.json - contains the login information of students account
+teacherlogin.json - contains login information of faculty account
+
+
+FOR ACCOUNT:
+
+teachers.json - contains information about all teachers
+students.json - contains information about all the students
+courses.json - contains details of all the courses
 
 
 Session variable is used to check whether a user has logged in or not.
 Pug Template is used for all the webpages design.
+fs module is used to read the json files.
