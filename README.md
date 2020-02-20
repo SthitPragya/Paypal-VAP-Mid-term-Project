@@ -10,6 +10,12 @@ If a course is removed by administrator, then that subject is removed from teach
 
 To start the Portal, open terminal in the root directory of the project. Then type
 
+npm install
+
+This will install all the modules required to run the web app, the details of which is stored in package.json
+
+Then enter the following command to start
+
 node startwebserver.js
 
 This starts the server on port 3000 which can be changes in startwebserver.js
