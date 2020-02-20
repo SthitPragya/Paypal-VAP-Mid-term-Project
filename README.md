@@ -49,9 +49,21 @@ After choosing the course, you will be provided with the option of choosing the 
 !['Available teachers of the particularcourses for Student'](https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(117).png)
 
 For Administrator Login
-!['Admin Login'](https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(117).png)
+!['Admin Login'](https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(118).png)
 
+After logging in, the administrator gets the option three options i.e. modifying students, faculty and course list
+!['Admin Home Page'](https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(119).png)
 
+If you choose to modify faculty, you see the list of all the professors id along with their names and subjects they teach.
+Their account can be removed by just by clicking on Delete Account. To add a professor, tap on Add Professor.
+!['Admin Home Page'](https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(120).png)
+
+If you choose to modify students list, the list of all students acount is shown. It contains their registration number along with name.
+Their account can be deleted by clicking on Delete Account next to their name. To add an account, tap on add student.
+!['Admin Home Page'](https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(121).png)
+
+When you choose to modify courses, you see the details about all the courses present.You have to option to delete a course just next to the details and at the end you have the button which takes you to a page where you can add new courses.
+!['Admin Home Page'](https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(122).png)
 
 
 MODULES USED:
