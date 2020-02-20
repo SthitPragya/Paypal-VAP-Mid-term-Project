@@ -1,0 +1,26 @@
+html
+    head
+        style
+            include teacherspage.css
+    body
+        h1(id="top") Welcome to Registration Portal
+        div(id="line")
+            p Hello, #{fname}
+        div(id="main")
+            h1 Your Courses
+            table
+                tr
+                    th S. No.
+                    th Course ID
+                    th Course Name
+                    th
+                - for(i=1;i<=cid.length;i++)
+                    tr
+                        td #{i}
+                        td #{cid[i-1]}
+                        td #{coursename[i-1]}
+                        td
+                            a(href=`/teachersdelcourse/${fid}/${cid[i-1]}`) Remove
+        div(id="bottom")
+            a(href='/logout' class="btmbtns") Log Out
+            a(href='/addcourseteacher' class="btmbtns") Add Course
