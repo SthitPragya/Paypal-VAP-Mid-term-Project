@@ -129,8 +129,6 @@ app.get('/teachersregcourse/:courseid', function(req, res){
 
 
 
-
-
 app.get('/student', function(req, res){
     res.render('studentlogin', {
         data:JSON.stringify(req.query)
@@ -293,32 +291,141 @@ app.get('/adminspage', function(req, res){
 
 app.get('/adminteacher', function(req, res){
     if(sess.user){
+        var data=fs.readFileSync('teachers.json', 'utf-8');
+        var json=JSON.parse(data);
+        var tid=Object.keys(json);
+        var name=[]
+        var courses=[]
+        tid.forEach(id=>{
+            courses.push(json[id])
+            name.push(json[id][0]);
+            courses.splice(0,1);
+        })
         res.render('adminteacher',{
             name:sess.user,
+            fname:name,
+            fid:tid,
+            cname:courses
         });
     }
     else
         res.redirect('/index');
+});
+
+app.get('/delteacher/:id', function(req, res){
+    if(sess.user){
+        removeteacher(req.params.id);
+        res.redirect('/adminteacher',{});
+    }
+    else
+        res.redirect('/index');
+});
+
+app.get('/newteacher', function(req, res){
+    if(sess.user){
+        res.render('newteacher', {
+            name:sess.user
+        });
+    }
+    else
+        res.redirect('/index');
+});
+
+app.post('/newteacher', function(req, res){
+    var fid=req.body.facultyid;
+    var fname=req.body.facultyname;
+    addteacher(fid, fname);
+    res.redirect('/adminteacher');
 });
 
 app.get('/adminstudent', function(req, res){
     if(sess.user){
+        var data=fs.readFileSync('students.json', 'utf-8');
+        var json=JSON.parse(data);
+        var sid=Object.keys(json);
+        var name=[]
+        sid.forEach(id=>{
+            name.push(json[id][0]);
+        })
         res.render('adminstudent',{
             name:sess.user,
+            sname:name,
+            sid:sid
         });
     }
     else
         res.redirect('/index');
 });
 
-app.get('/admincourse', function(req, res){
+app.get('/delstudent/:id', function(req, res){
     if(sess.user){
-        res.render('admincourse',{
-            name:sess.user,
+        removestudent(req.params.id);
+        res.redirect('/adminstudent');
+    }
+    else
+        res.redirect('/index');
+});
+
+app.get('/newstudent', function(req, res){
+    if(sess.user){
+        res.render('newstudent', {
+            name:sess.user
         });
     }
     else
         res.redirect('/index');
+});
+
+app.post('/newstudent', function(req, res){
+    var sid=req.body.stid;
+    var sname=req.body.stname;
+    addstudent(sid, sname);
+    res.redirect('/adminstudent');
+});
+
+app.get('/admincourse', function(req, res){
+    if(sess.user){
+        var data=fs.readFileSync("courses.json", 'utf-8');
+        var json=JSON.parse(data);
+        var cid=Object.keys(json);
+        var cname=[];
+        cid.forEach(id=>{
+            cname.push(json[id][0]);
+        })
+        res.render('admincourse',{
+            name:sess.user,
+            cid:cid,
+            cname:cname
+        });
+    }
+    else
+        res.redirect('/index');
+});
+
+app.get('/delcourse/:id', function(req, res){
+    if(sess.user){
+        deletecourse(req.params.id);
+        res.redirect('/admincourse');
+    }
+    else
+        res.redirect('/index');
+});
+
+app.get('/newcourse', function(req, res){
+    if(sess.user){
+        res.render('newcourse', {
+            name:sess.user
+        });
+    }
+    else
+        res.redirect('/index');
+});
+
+app.post('/newcourse', function(req, res){
+    var cid=req.body.courseid;
+    var cname=req.body.coursename;
+    addcourse(cid, cname);
+    res.redirect('/admincourse')
 });
 
 app.listen(3000);
@@ -398,7 +505,11 @@ function addstudent(studentid, studentname) {
     var data=fs.readFileSync('students.json', 'utf-8');
     var json = JSON.parse(data);
     json[studentid]=[studentname];
-    fs.writeFileSync("students.json", JSON.stringify(json))
+    fs.writeFileSync("students.json", JSON.stringify(json));
+    var data=fs.readFileSync('studentlogin.js');
+    var json=JSON.parse(data);
+    json[studentid]=studentid;
+    fs.writeFileSync('studentlogin.js', JSON.stringify(json), function(err){console.log(err)});
 }
 
 function removestudent(studentid){
@@ -406,6 +517,10 @@ function removestudent(studentid){
     var json=JSON.parse(data);
     delete json[studentid];
     fs.writeFileSync('students.json', JSON.stringify(json));
+    var data=fs.readFileSync('studentlogin.js');
+    var json=JSON.parse(data);
+    delete json[studentid];
+    fs.writeFileSync('studentlogin.js', JSON.stringify(json), function(err){console.log(err)});
 }
 
 function addteacher(teacherid, teachername) {
@@ -413,6 +528,10 @@ function addteacher(teacherid, teachername) {
     var json = JSON.parse(data);
     json[teacherid]=[teachername];
     fs.writeFileSync("teachers.json", JSON.stringify(json))
+    var data=fs.readFileSync('teacherlogin.js');
+    var json=JSON.parse(data);
+    json[teacherid]=teacherid;
+    fs.writeFileSync('teacherlogin.js', JSON.stringify(json), function(err){console.log(err)});
 }
 
 function removeteacher(teacherid){
@@ -423,6 +542,10 @@ function removeteacher(teacherid){
         removecourseteacher(teacherid, subid[i]);
     delete json[teacherid];
     fs.writeFileSync("teachers.json", JSON.stringify(json));
+    var data=fs.readFileSync('teacherlogin.js');
+    var json=JSON.parse(data);
+    json[teacherid]=teacherid;
+    fs.writeFileSync('teacherlogin.js', JSON.stringify(json), function(err){console.log(err)});
 }
 
 function addcourse(courseid, coursename) {
