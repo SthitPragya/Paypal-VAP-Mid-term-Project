@@ -15,7 +15,7 @@ Student
 Faculty
 Administrator
 
-!['Home Page']('https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(110).png')
+!['Home Page'](https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(110).png)
 
 The login info is stored in json files.
 For students, it is stored in studentlogin.json
@@ -23,33 +23,33 @@ For teachers, it is stored in teacherlogin.json
 For administrators, the id and password is 'admin'
 
 For Faculty Login
-!['Faculty Login']('https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(111).png')
+!['Faculty Login'](https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(111).png)
 
 After you login as a teacher, you see options to add and delete courses
-!['Faculty Home Page']('https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(112).png')
+!['Faculty Home Page'](https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(112).png)
 
 When you go to add course, the available courses are shown
-!['Available courses for faculty']('https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(113).png')
+!['Available courses for faculty'](https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(113).png)
 
 
 For Student Login
-!['Student Login']('https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(114).png')
+!['Student Login'](https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(114).png)
 
 After you login as a Student, you see the details about all the courses you have registered along with the professor.
 You have to option to drop a course just next to the details and at the end you have the button which takes you to a page where you can
 register for new course.
 
-!['Student Home Page']('https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(115).png')
+!['Student Home Page'](https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(115).png)
 
 When you go to add course, the available courses are shown
-!['Available courses for Student']('https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(116).png')
+!['Available courses for Student'](https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(116).png)
 
 After choosing the course, you will be provided with the option of choosing the faculty who teach that particular course.
 
-!['Available teachers of the particularcourses for Student']('https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(117).png')
+!['Available teachers of the particularcourses for Student'](https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(117).png)
 
 For Administrator Login
-!['Admin Login']('https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(117).png')
+!['Admin Login'](https://github.com/SthitPragya/Paypal-VAP-Mid-term-Project/blob/master/screenshots/Screenshot%20(117).png)
 
 
 
